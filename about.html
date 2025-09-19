@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartPage Hub offers tools for personal growth, financial freedom, and skill mastery. Join us and start your journey to success today!" />
+    <meta property="og:title" content="About Us - SmartPage Hub" />
+    <meta property="og:description" content="SmartPage Hub is dedicated to empowering your journey to success with practical tools for personal growth, financial freedom, and skill mastery." />
+    <meta property="og:image" content="your-image-url.jpg" />
+    <meta property="og:url" content="https://www.smartpagehub.com/about" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us - SmartPage Hub" />
+    <meta name="twitter:description" content="SmartPage Hub is dedicated to empowering your journey to success with practical tools for personal growth, financial freedom, and skill mastery." />
+    <meta name="twitter:image" content="your-image-url.jpg" />
+    <title>About Us - SmartPage Hub</title>
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+        }
+
+        .header-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            left: auto;
+            display: flex;
+            gap: 10px;
+            z-index: 1100;
+        }
+
+        .header-buttons a {
+            text-decoration: none;
+            color: white;
+            background: #4A90E2;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .header-buttons a:hover { background: #357ABD; }
+
+        header {
+            margin-top: 60px;
+            width: 100%;
+            height: 500px;
+        }
+
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p, ul li {
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .square-group {
+            display: inline-block;
+            background-color: #fef3c7;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 40px;
+            width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .square-group:hover {
+            transform: scale(1.05);
+        }
+
+        .square-group:nth-child(1) {
+            background-color: #4A90E2;
+          
+        }
+
+        .square-group:nth-child(2) {
+            background-color: #FF6347;
+          
+        }
+
+        .square-group:nth-child(3) {
+            background-color: #32CD32;
+           
+        }
+
+        .square-group:nth-child(4) {
+            background-color: #FFD700;
+            
+        }
+
+ 
+
+        footer {
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+	width: 100%
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fef3c7;
+        }
+
+        .offer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .offer-box {
+            background-color: #fef3c7;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 40px;
+            width: 20%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .offer-box:hover {
+            transform: scale(1.05);
+        }
+
+        .offer-box:nth-child(1) {
+            background-color: #FF6347; /* Tomato */
+        }
+
+        .offer-box:nth-child(2) {
+            background-color: #FFD700; /* Gold */
+        }
+
+        .offer-box:nth-child(3) {
+            background-color: #32CD32; /* Lime Green */
+        }
+
+        .offer-box:nth-child(4) {
+            background-color: #4A90E2; /* Dodger Blue */
+        }
+
+        .offer-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .offer-box p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .offer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .offer-box {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+ h4 {
+            text-align: center;
+            font-size: 5em;
+            color: white;
+margin-top: 150px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h4:hover {
+            color: #4A90E2;
+            transform: scale(1.05);
+        }
+         #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+             background-color: #800080;
+        }
+    </style>
+    </style>
+    <script>
+        function startCountdown(duration) {
+            let timer = duration, minutes, seconds;
+            let countdownElement = document.getElementById("timer");
+
+            let interval = setInterval(function () {
+                minutes = Math.floor(timer / 60);
+                seconds = timer % 60;
+                countdownElement.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    window.location.href = "signup.html"; // Redirect when timer ends
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let countdownTime = 24 * 60; // 5 minutes countdown
+            startCountdown(countdownTime);
+        };
+    </script>
+</head>
+
+
+<body>
+
+<div class="header-buttons">
+    <a href="index.html">Home</a>
+    <a href="explore.html">Explore</a>
+</div>
+
+<header>
+    <img src="about.png" alt="About SmartPage Hub - Empowering your journey to success" />
+</header>
+
+<div class="container">
+    <div class="square-group">
+        <h1>Who We Are</h1>
+        <p>
+            Founded by JA Necesario, SmartPage Hub is dedicated to empowering your journey toward success.
+            We understand what it takes to reach your full potential and offer tools that transform lives.
+        </p>
+    </div>
+
+    <div class="square-group">
+        <h1>Our Mission</h1>
+        <p>
+            We believe in the transformative power of knowledge and organization. Our mission is to
+            provide practical, insightful, and actionable content that helps you achieve financial
+            freedom and master new skills.
+        </p>
+    </div>
+
+    <div class="square-group">
+        <h1>Affordable Pricing Structure</h1>
+        <ul>
+            <li>💎 One-time payment of <strong>₱500</strong> for lifetime access</li>
+            <li>📥 Download any resource</li>
+            <li>♾️ Unlimited access to our growing library</li>
+            <li>🔄 Regular updates and new additions</li>
+        </ul>
+    </div>
+
+    <div class="square-group">
+        <h1>🚀 Launch your passive income journey with our digital products!</h1>
+        <ul>
+            <li>📚 Learn proven financial strategies</li>
+            <li>💡 Help others while earning extra income</li>
+            <li>🎯 Create multiple revenue streams</li>
+        </ul>
+    </div>
+
+
+    <h4>What We Offer</h4>
+    <div class="offer-container">
+        <div class="offer-box">
+            <h3>📚 Self-Improvement & Productivity eBooks</h3>
+            <p>Learn strategies to enhance your personal growth and maximize your efficiency.</p>
+        </div>
+        <div class="offer-box">
+            <h3>💰 Wealth & Financial Success Guides</h3>
+            <p>Discover proven methods to build wealth and achieve financial independence.</p>
+        </div>
+        <div class="offer-box">
+            <h3>🎓 Knowledge & Skill Mastery Digital Books</h3>
+            <p>Access comprehensive guides to master new skills and expand your expertise.</p>
+        </div>
+        <div class="offer-box">
+            <h3>📝 Planners, Checklists & Tools</h3>
+            <p>Get organized with our collection of practical planning resources.</p>
+        </div>
+
+
+<footer>
+    <p>&copy; 2025 SmartPage Hub. All rights reserved.</p>
+    <p>
+        <a href="privacy-policy.html">Privacy Policy</a> | 
+        <a href="terms-of-service.html">Terms of Service</a> | 
+        <a href="contact.html">Contact Us</a>
+    </p>
+</footer>
+
+</body>
+</html>
+
