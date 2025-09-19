@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My eBooks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .header .nav {
+            display: flex;
+            gap: 15px;
+        }
+        .header button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .header button:hover {
+            background-color: #777;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .book {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .book:hover {
+            transform: scale(1.05);
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+.book img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.big-book img {
+    height: 220px;  /* bigger than others */
+    width: 430%;
+}
+
+        .animated-text {
+            font-size: 28px;
+            background-image: linear-gradient(90deg, #800080, #9b59b6, #8e44ad, #6a0dad);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 5s linear infinite, bounce 1.5s ease-in-out, typing 4s steps(40);
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #800080;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">JA Digital Works</div>
+        <div class="nav">
+            <button onclick="location.href='index.html'">Home</button>
+        </div>
+    </div>
+
+    <h1 class="animated-text">
+        📚 Discover Over <strong>1,000+ eBooks</strong> in Our Collection!
+    </h1>
+
+    <div class="container" id="books-container"></div>
+
+    <script>
+    const booksContainer = document.getElementById("books-container");
+
+    // Books 1–45 (JFIF)
+    for (let i = 1; i <= 45; i++) {
+        const bookDiv = document.createElement("div");
+        bookDiv.className = "book";
+        bookDiv.innerHTML = `
+            <a href="book-details/book${i}.html">
+                <img src="EXPLORE/${i}.jfif" alt="Book ${i}" loading="lazy">
+            </a>
+        `;
+        booksContainer.appendChild(bookDiv);
+    }
+
+    // Book 46 (PNG, bigger size)
+    const book46 = document.createElement("div");
+    book46.className = "book big-book"; // special class
+    book46.innerHTML = `
+        <a href="book-details/book46.html">
+            <img src="EXPLORE/46.png" alt="Book 46" loading="lazy">
+        </a>
+    `;
+    booksContainer.appendChild(book46);
+</script>
+
+</body>
+</html>

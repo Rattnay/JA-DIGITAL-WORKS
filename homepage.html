@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore eBooks on self-improvement, finance, and skills at JAEBookStore.">
+    <title>JA Digital Works</title>
+    <style>
+       body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background: black; 
+    color: white; 
+        }
+        .header-buttons {
+  position: absolute; /* stays only at the top */
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+
+.header-buttons a {
+    text-decoration: none;
+    color: white;
+    background: #4A90E2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block; /* keeps button shape */
+}
+
+.banner {
+    margin-top: 0;
+    padding: 40px 20px;
+    background: black; /* keeps consistent background */
+}
+.banner-container {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  justify-content: space-between; /* push image left, text right */
+  gap: 40px;             /* space between image and text */
+  padding: 40px;
+}
+
+.banner img {
+  width: 60%;           /* image takes left side */
+  height: auto;
+  border-radius: 10px;
+}
+
+.banner-text {
+  width: 35%;           /* text menu takes right side */
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.banner-text h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #f1c40f;
+  text-align: center;
+}
+
+.banner-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* center the menu items */
+}
+
+.banner-text ul li {
+  margin: 12px 0;
+  position: relative;
+}
+
+.banner-text ul li a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #4A90E2; /* decorative border */
+  border-radius: 25px;       /* pill-shaped buttons */
+  transition: all 0.3s ease;
+}
+
+.banner-text ul li a:hover {
+  background: #4A90E2;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #4A90E2;
+}
+
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background: #000; /* darker background for contrast */
+  color: white;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #f1c40f; /* golden highlight */
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.about .highlight {
+  color: #4A90E2; /* emphasize important words */
+  font-weight: bold;
+}
+
+
+      h1 {
+            text-align: center;
+            font-size: 4em;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #4A90E2;
+            transform: scale(1.05);
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            padding: 40px;
+        }
+        .category {
+            text-align: center; 
+            padding: 20px; 
+            border-radius: 10px; 
+            width: 100%;
+            max-width: 350px;
+        }
+        .category img {
+            width: 100%;
+            height: auto;
+        }
+        .category h2 a {
+            color: white;
+            text-decoration: none;
+        }
+        .category h2 a:hover {
+            text-decoration: underline;
+        }
+         
+
+        /* Button styles */
+        .cta-button {
+            background-color: #4A90E2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #357ABD;
+        }
+        
+        @media (max-width: 768px) {
+            .categories { flex-direction: column; align-items: center; }
+            .header-buttons { flex-direction: column; top: 5px; right: 5px; }
+            .header-buttons a { padding: 8px 16px; font-size: 14px; }
+            h1 { font-size: 2em; }
+        }
+
+        footer {
+            background: #222; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+        footer .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+           
+    </style>
+</head>
+<style>
+   .slideshow-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.slide-track {
+    display: flex; /* Ensure slides are in a row */
+    gap: 15px; /* Adds spacing between slides */
+    width: calc(315px * 30); /* Adjusted for 30 books */
+    animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-9450px); } /* 315px per book */
+}
+
+.slide {
+    flex: 0 0 300px;
+    margin-right: 15px;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.slide img:hover {
+    transform: scale(1.05);
+}
+
+</style>
+<body>
+   <div class="header-buttons">
+        <a href="about.html" aria-label="About">About</a>
+        <a href="books.html" aria-label="Books">Books</a>
+        <a href="services.html" aria-label="Services">Services</a>
+        <a href="blog.html" aria-label="Blog">Blog</a>
+        <a href="contact.html" aria-label="Contact">Contact</a>
+    </div>
+    
+
+    <main>
+       <section class="banner">
+  <div class="banner-container">
+    <img src="upper.png" alt="eBook Sale Banner - Limited Offer" onerror="this.src='placeholder.png';">
+    
+    <div class="banner-text">
+      <h2>Explore Our Library</h2>
+      <ul>
+  <li><a href="fiction.html">Fictional & Non-Fictional Books</a></li>
+  <li><a href="languages.html">Educational Languages</a></li>
+  <li><a href="math-science.html">Math and Sciences</a></li>
+  <li><a href="christian.html">Christian Books</a></li>
+  <li><a href="tools.html">Tools</a></li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+<h1>Access Exclusive Content & Offers</h1>
+
+<div class="slideshow-container">
+    <div class="slide-track">
+        <script>
+            for (let i = 1; i <= 45; i++) {
+                document.write(`
+                    <div class="slide">
+                        <img src="EXPLORE/${i}.jfif" alt="Book ${i}" onerror="this.src='placeholder.png';">
+                    </div>
+                `);
+            }
+        </script>
+    </div>
+</div>
+
+<section class="about">
+  <h2>About Us</h2>
+  <p>
+    Welcome to <span class="highlight">JA Digital Works</span> — your hub for 
+    <span class="highlight">eBooks, digital planners, and learning resources</span> 
+    designed to inspire productivity, creativity, and personal growth.
+  </p>
+  <p>
+    We specialize in providing <span class="highlight">Christian books</span>, 
+    <span class="highlight">fiction and non-fiction titles</span>, 
+    <span class="highlight">educational resources</span>, 
+    and practical tools for everyday success.
+  </p>
+  <p>
+    At JA Digital Works, we believe in making knowledge accessible to everyone. 
+    Explore our collection and find the right resources to 
+    <span class="highlight">learn, grow, and thrive</span>.
+  </p>
+</section>
+
+
+    <footer>
+        <p>&copy; 2025 JA Digital Works. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+</body>
+</html>
+
